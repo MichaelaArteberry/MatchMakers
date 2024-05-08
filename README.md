@@ -1,4 +1,13 @@
-# Module3 Project Gamma
+# US by Match Makers
+
+    - Sean Lim
+    - Yadriel Ruiz Vega
+    - D'Angelo DeNiro
+    - Michaela Arteberry
+
+    US - be yourself! Get couple'd up!
+
+    ---
 
 ## Getting started
 
