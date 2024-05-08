@@ -9,12 +9,11 @@
 
     ---
 
-## Getting started
+## Intended Market
 
-You have a project repository, now what? The next section
-lists all of the deliverables that are due at the end of the
-week. Below is some guidance for getting started on the
-tasks for this week.
+---
+
+We are targeting the general public who are lonely, looking for love and to settle down, or simply those looking to
 
 ## Install Extensions
 
