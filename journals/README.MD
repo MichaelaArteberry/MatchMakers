@@ -7,6 +7,7 @@ Each team member is required to keep a development journal, which should be a si
 Recommended naming convention is `first_last.md`.
 
 
+<<<<<<< HEAD
 ## Database Models
 
 Tables:
@@ -333,3 +334,5 @@ get_all() -> list[UserWithPw]: Gets all users from the database.
 These queries are used to interact with the Users table in the database.
 They handle user retrieval, creation, and fetching all users.
 Exceptions are raised if any database operation fails.
+=======
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867

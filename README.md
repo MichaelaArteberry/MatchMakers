@@ -12,6 +12,7 @@
 ---
 
 New users can create an account by signing up or an existing user may sign in to their account. They will set their romantic preferences that will filter the other users on our application, and reveal those filtered users to the current user. The user can make 'swipes'(click and drag), or simply press a like or dislike button on a user card that appears to them. A user can view other users that have given them a like. A user can return a like, or decline a like with a push of a button. A user can view a page that has their matches, users they have likes, who also liked them back.
+<<<<<<< HEAD
 
 ### User Stories/Scenarios
 
@@ -193,6 +194,17 @@ GET /api/auth/api/users/matches: Retrieves a list of matches for a user
 "status": true
 }
 ]
+=======
+
+### User Stories/Scenarios
+    Scenario: User visits page for the first time
+        Given the user is signing up for our application
+        When the user enters valid form entries
+        And clicks on the submit button
+        Then the User is redirected to establish his/hers/their romantic preferences
+        And then should be redirected to the swiping page to get started on making relationships
+
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 
 ## Project layout
 
@@ -206,6 +218,33 @@ GET /api/auth/api/users/matches: Retrieves a list of matches for a user
 ---
 
 We are targeting individuals that want to connect with others, to start a romantic relationship.
+
+<<<<<<< HEAD
+# Wireframe
+
+![Alt text](Home-us.png)
+![Alt text](<Sign up-Us.png>)
+![Alt text](<Sign In-Us.png>)
+![Alt text](<Us-Romantic Preference.png>)
+![Alt text](Likes-Us.png)
+![Alt text](Swiping.png)
+![Alt text](Matches-Us.png)
+
+## Database Models
+
+Tables:
+
+    gender - Houses genders to include 3 premade genders (Male, Female, Non-Binary). More maybe inserted into the table via migration.
+        SERIAL PRIMARY KEY NOT NULL      - id                  - The unique identifier of each gender
+        VARCHAR(20) NOT NULL             - gender_name         - The name of the gender as the user expects it (IE 'Male' or 'Female')
+
+    Pre inserted genders:
+        id = 1, gender_name = Male
+        id = 2, gender_name = Female
+        id = 3, gender_name = Non-Binary
+
+
+=======
 
 # Wireframe
 
@@ -231,6 +270,7 @@ Tables:
         id = 3, gender_name = Non-Binary
 
 
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
     romantic_pref - Houses all users romantic preferences as designated by the user when finalizing their profile.
         SERIAL PRIMARY KEY NOT NULL      - id                  - The unique identifier of each user's romantic preference
         INT NOT NULL                     - user1_id            - The user this set of romantic preferences belongs to (Foreign Key of 'id' in users table)
@@ -257,6 +297,10 @@ Tables:
         VARCHAR(1000)                    - description         - The self description the user designated for themselves upon account creation
         VARCHAR(256)                     - picture_url         - The picture's url the user designated for themselves upon account creation
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 ## API DOCUMENTATION
 
 The application uses APIs to connect to a database for user management. Users can create profiles and verify connections to interact with others. They can set preferences such as gender and age range to swipe on potential matches.
@@ -268,7 +312,10 @@ Contains API routes and database queries for user authentication.
 ## API Routes
 
 ### Auth Routers
+<<<<<<< HEAD
 
+=======
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 **POST** /api/auth/signup: Creates a new user when someone submits the signup form
 
     - Expected input:
@@ -290,6 +337,10 @@ Contains API routes and database queries for user authentication.
     "username": "string"
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 **POST** /api/auth/signin: Signs the user in when they use the Sign In form
 
     - Expected Input:
@@ -346,6 +397,10 @@ Contains API routes and database queries for user authentication.
 
 ### Likes
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 **POST** /api/likes: Create a Like
 
     - Expected Input:
@@ -363,6 +418,7 @@ Contains API routes and database queries for user authentication.
         "status": true
         }
 
+<<<<<<< HEAD
 **GET** /api/likes: Get all likes - Expected Output: - {
 "additionalProp1": [
 {
@@ -373,6 +429,20 @@ Contains API routes and database queries for user authentication.
 }
 ]
 }
+=======
+**GET** /api/likes: Get all likes
+    - Expected Output:
+        - {
+        "additionalProp1": [
+            {
+            "id": 0,
+            "logged_in_user": 0,
+            "liked_by_user": 0,
+            "status": true
+            }
+            ]
+        }
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 
 **PUT** /api/auth/likes/<int:id>: Update Like Status
 
@@ -421,6 +491,7 @@ Contains API routes and database queries for user authentication.
         }
         ]
 
+<<<<<<< HEAD
 **POST** /api/preferences: Create a preferences - Expected input:
 -{
 "user1_id": 0,
@@ -428,6 +499,16 @@ Contains API routes and database queries for user authentication.
 "max_age": 0,
 "gender_id": 0
 }
+=======
+**POST** /api/preferences: Create a preferences
+    - Expected input:
+        -{
+        "user1_id": 0,
+        "min_age": 0,
+        "max_age": 0,
+        "gender_id": 0
+        }
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 
     - Expected output:
         -{
@@ -438,6 +519,7 @@ Contains API routes and database queries for user authentication.
         "gender_id": 0
         }
 
+<<<<<<< HEAD
 **GET** /api/preferences: Get all preferences - Expected output: -[
 {
 "id": 0,
@@ -463,6 +545,36 @@ Expected output:
 "max_age": 0,
 "gender_id": 0
 }
+=======
+**GET** /api/preferences: Get all preferences
+    - Expected output:
+        -[
+        {
+        "id": 0,
+        "user1_id": 0,
+        "min_age": 0,
+        "max_age": 0,
+        "gender_id": 0
+        }
+        ]
+
+**PUT** /api/prefereneces/<int:id>: Update a preference
+    - Expected input:
+        -{
+        "user1_id": 0,
+        "min_age": 0,
+        "max_age": 0,
+        "gender_id": 0
+        }
+     Expected output:
+        -{
+        "id": 0,
+        "user1_id": 0,
+        "min_age": 0,
+        "max_age": 0,
+        "gender_id": 0
+        }
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 
 ### Matches
 
@@ -479,12 +591,23 @@ Expected output:
         ],
         }
 
+<<<<<<< HEAD
 **DELETE** - /api/user/matches/<int:id> - Delete Match - Expected Input:
 Match_id: int
+=======
+**DELETE** - /api/user/matches/<int:id> - Delete Match
+    - Expected Input:
+    Match_id: int
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 
     - Expected Output:
         "string"
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 ## Stretch Goals
 
 ---
@@ -550,8 +673,13 @@ pip install -r requirements.txt
 Then make sure the venv is selected in VSCode by checking the lower right of the
 VSCode status bar
 
+<<<<<<< HEAD
 ### Unit Tests
 
+=======
+
+### Unit Tests
+>>>>>>> cd73757dfad3ad95082c4a6ec8f3749f30e9f867
 Unit Testing:
 Michaela Arteberry: test_get_all_genders.py
 Ensures that all default genders and custom genders can be retrieved from the database.
