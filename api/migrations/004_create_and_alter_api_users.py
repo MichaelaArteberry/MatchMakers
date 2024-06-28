@@ -11,7 +11,7 @@ steps = [
         # "Down" SQL statement
         """
         DROP TABLE gender;
-        """
+        """,
     ],
     [
         # "Up" SQL statement
@@ -22,14 +22,13 @@ steps = [
             min_age INT NOT NULL,
             max_age INT NOT NULL,
             gender_id INT NOT NULL,
-            CONSTRAINT fk_gender FOREIGN KEY (gender_id) REFERENCES gender(id),
             CONSTRAINT fk_user1 FOREIGN KEY (user1_id) REFERENCES users(id)
         );
         """,
         # "Down" SQL statement
         """
         DROP TABLE romantic_pref;
-        """
+        """,
     ],
     [
         # "Up" SQL statement
@@ -46,7 +45,7 @@ steps = [
         # "Down" SQL statement
         """
         DROP TABLE likes;
-        """
+        """,
     ],
     [
         # "Up" SQL statement
@@ -62,7 +61,7 @@ steps = [
         # "Down" SQL statement
         """
         DROP TABLE matches;
-        """
+        """,
     ],
     [
         # "Up" SQL statement
@@ -75,14 +74,12 @@ steps = [
             ADD age INTEGER NOT NULL,
             ADD description VARCHAR(1000) NOT NULL,
             ADD picture_url VARCHAR(256) NOT NULL,
-            ADD preferences INT,
-            ADD CONSTRAINT fk_gender FOREIGN KEY (gender) REFERENCES gender(id),
-            ADD CONSTRAINT fk_romantic_pref FOREIGN KEY (preferences) REFERENCES romantic_pref(id);
+            ADD CONSTRAINT fk_gender FOREIGN KEY (gender) REFERENCES gender(id);
 
         INSERT INTO users (username, password, first_name, last_name, location, gender, age, description, picture_url)
         VALUES ('dangelodeniro', 'string', 'D''Angelo', 'DeNiro', 'Colorado', 1, 28, 'string', 'string'),
                ('yadrielruiz', 'string', 'Yadriel', 'Ruiz', 'Texas', 1, 26, 'string', 'string'),
-               ('keygomez', 'string', 'Key', 'Gomez', 'Texas', 3, 25, 'string', 'string'),
+               ('seanlim', 'string', 'Sean', 'Lim', 'New York', 1, 25, 'string', 'string'),
                ('michaelaarteberry', 'string', 'Michaela', 'Arteberry', 'Texas', 2, 25, 'string', 'string');
         """,
         # "Down" SQL statement
@@ -95,9 +92,7 @@ steps = [
             DROP CONSTRAINT fk_gender,
             DROP COLUMN age,
             DROP COLUMN description,
-            DROP COLUMN picture_url,
-            DROP COLUMN preferences,
-            DROP CONSTRAINT fk_romantic_pref;
-        """
-    ]
+            DROP COLUMN picture_url
+        """,
+    ],
 ]
